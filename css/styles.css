@@ -175,6 +175,7 @@ header .header {
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--primary-text-color);
+  transition: var(--effect-hover-focus-transition) cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .list-contacts li:not(:last-child) {
@@ -895,34 +896,6 @@ li [type]:hover {
     cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-close {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  position: absolute;
-  top: 8px;
-  right: 8px;
-
-  background-color: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  transition: transform var(--effect-hover-focus-transition)
-    cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.modal-close-icon:hover,
-.modal-close-icon:focus {
-  fill: #2196f3;
-}
-
-.modal-form .input-icon:focus + .input-icon {
-  fill: #2196f3;
-}
-
 .is-hidden {
   visibility: hidden;
   opacity: 0;
@@ -1041,6 +1014,7 @@ li [type]:hover {
   letter-spacing: 0.03em;
   align-items: center;
   color: #757575;
+  margin-bottom: 30px;
 }
 
 .check-item {
@@ -1050,6 +1024,8 @@ li [type]:hover {
   border-radius: 2px;
   display: flex;
   justify-content: center;
+  align-items: center;
+  margin-left: 14px;
   margin-right: 7px;
 }
 
@@ -1060,4 +1036,35 @@ li [type]:hover {
 .modal-check:checked + .check-text .check-item {
   background-color: var(--link-hover-color);
   border: none;
+}
+
+.modal-link {
+  text-decoration: underline;
+}
+
+/*кнопка закриття модалкі------------------*/
+
+.modal-close {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  cursor: pointer;
+
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: transform var(--effect-hover-focus-transition)
+    cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-close:hover .modal-close-icon {
+  fill: #2196f3;
 }
